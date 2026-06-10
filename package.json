@@ -27,7 +27,7 @@
     "tailwind-merge": "^3.6.0"
   },
   "engines": {
-    "node": ">=20.9.0"
+    "node": "20.x"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
