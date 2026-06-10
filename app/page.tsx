@@ -7,14 +7,23 @@ const CYAN = '#0ea5e9';
 // ──────────────────────────────────────────────
 function QuienesSomos() {
   return (
-    <section id="nosotros" style={{ background: '#ffffff', padding: '100px 24px' }}>
-      <div style={{ maxWidth: '1152px', margin: '0 auto', display: 'flex', flexDirection: 'column', gap: 100 }}>
+    <section id="nosotros" style={{ background: '#ffffff', padding: '80px 24px' }}>
+      <style>{`
+        .qs-row { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center; }
+        .qs-row-reverse { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center; }
+        @media (max-width: 768px) {
+          .qs-row, .qs-row-reverse { grid-template-columns: 1fr !important; gap: 32px !important; }
+          .qs-row-reverse .qs-img { order: -1; }
+        }
+      `}</style>
+
+      <div style={{ maxWidth: '1152px', margin: '0 auto', display: 'flex', flexDirection: 'column', gap: 80 }}>
 
         {/* Fila 1: imagen + historia */}
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 72, alignItems: 'center' }}>
-          <div style={{ borderRadius: 20, overflow: 'hidden', aspectRatio: '4/3' }}>
+        <div className="qs-row">
+          <div className="qs-img" style={{ borderRadius: 20, overflow: 'hidden', aspectRatio: '4/3' }}>
             <img
-              src="https://images.unsplash.com/photo-1551244072-5d12893278bc?w=900&q=80"
+              src="/Fondo1.jpg"
               alt="ROV Submarina Chiloé"
               style={{ width: '100%', height: '100%', objectFit: 'cover' }}
             />
@@ -23,7 +32,7 @@ function QuienesSomos() {
             <p style={{ color: CYAN, fontSize: 12, fontWeight: 700, letterSpacing: '0.18em', textTransform: 'uppercase', margin: 0 }}>
               ¿Quiénes somos?
             </p>
-            <h2 style={{ fontSize: 'clamp(30px, 4vw, 46px)', fontWeight: 900, color: '#0f172a', lineHeight: 1.15, margin: 0 }}>
+            <h2 style={{ fontSize: 'clamp(28px, 4vw, 46px)', fontWeight: 900, color: '#0f172a', lineHeight: 1.15, margin: 0 }}>
               Submarina Chiloé
             </h2>
             <p style={{ color: '#64748b', fontSize: 16, lineHeight: 1.8, margin: 0 }}>
@@ -41,7 +50,7 @@ function QuienesSomos() {
         </div>
 
         {/* Fila 2: visión/misión + imagen */}
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 72, alignItems: 'center' }}>
+        <div className="qs-row-reverse">
           <div style={{ display: 'flex', flexDirection: 'column', gap: 36 }}>
             <div>
               <h3 style={{ fontSize: 14, fontWeight: 900, color: '#0f172a', letterSpacing: '0.12em', textTransform: 'uppercase', marginBottom: 14 }}>
@@ -66,9 +75,9 @@ function QuienesSomos() {
               </p>
             </div>
           </div>
-          <div style={{ borderRadius: 20, overflow: 'hidden', aspectRatio: '4/3' }}>
+          <div className="qs-img" style={{ borderRadius: 20, overflow: 'hidden', aspectRatio: '4/3' }}>
             <img
-              src="https://images.unsplash.com/photo-1518020382113-a7e8fc38eac9?w=900&q=80"
+              src="/Fondo2.JPG"
               alt="ROV operación"
               style={{ width: '100%', height: '100%', objectFit: 'cover' }}
             />
@@ -85,21 +94,30 @@ function Clientes() {
   const nombres = ['Mowi', 'Cermaq', 'AquaChile', 'Multiexport', 'Camanchaca', 'Los Fiordos', 'Salmones Aysén', 'Marine Harvest'];
 
   return (
-    <section id="clientes" style={{ background: '#ffffff', padding: '120px 24px' }}>
+    <section id="clientes" style={{ background: '#ffffff', padding: '80px 24px' }}>
+      <style>{`
+        .clientes-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+        @media (max-width: 768px) {
+          .clientes-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 12px !important; }
+        }
+        @media (max-width: 400px) {
+          .clientes-grid { grid-template-columns: repeat(2, 1fr) !important; }
+        }
+      `}</style>
       <div style={{ maxWidth: '1152px', margin: '0 auto' }}>
         <p style={{ color: BLUE, fontSize: '12px', fontWeight: 700, letterSpacing: '0.2em', textTransform: 'uppercase', marginBottom: '20px' }}>
           Confían en nosotros
         </p>
         <div style={{ width: '48px', height: '3px', background: CYAN, borderRadius: '2px', marginBottom: '32px' }} />
-        <h2 style={{ fontSize: '48px', fontWeight: 900, color: '#0f172a', marginBottom: '16px' }}>
+        <h2 style={{ fontSize: 'clamp(32px, 6vw, 48px)', fontWeight: 900, color: '#0f172a', marginBottom: '16px' }}>
           Nuestros clientes
         </h2>
-        <p style={{ color: '#94a3b8', fontSize: '15px', marginBottom: '64px', maxWidth: '480px' }}>
+        <p style={{ color: '#94a3b8', fontSize: '15px', marginBottom: '48px', maxWidth: '480px' }}>
           Trabajamos con las principales empresas de la industria salmonera y acuícola de Chile.
         </p>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '16px' }}>
+        <div className="clientes-grid">
           {nombres.map(n => (
-            <div key={n} style={{ height: '88px', borderRadius: '12px', border: '1px solid #e2e8f0', display: 'flex', alignItems: 'center', justifyContent: 'center', background: '#f8fafc' }}>
+            <div key={n} style={{ height: '80px', borderRadius: '12px', border: '1px solid #e2e8f0', display: 'flex', alignItems: 'center', justifyContent: 'center', background: '#f8fafc' }}>
               <span style={{ color: '#94a3b8', fontWeight: 600, fontSize: '14px' }}>{n}</span>
             </div>
           ))}
@@ -117,7 +135,6 @@ export default function Home() {
     <>
       {/* ── Hero: video fijo de fondo ── */}
       <section style={{ position: 'relative', width: '100%', height: '100vh', overflow: 'hidden' }}>
-        {/* Video de fondo */}
         <video
           src="/hero.mp4"
           autoPlay
@@ -132,10 +149,8 @@ export default function Home() {
             objectFit: 'cover',
           }}
         />
-        {/* Overlay oscuro */}
         <div style={{ position: 'absolute', inset: 0, background: 'rgba(0,0,0,0.45)' }} />
 
-        {/* Texto centrado */}
         <div style={{
           position: 'relative',
           zIndex: 10,
@@ -158,7 +173,7 @@ export default function Home() {
             Robótica Submarina Chiloé
           </p>
           <h1 style={{
-            fontSize: 'clamp(40px, 7vw, 80px)',
+            fontSize: 'clamp(36px, 7vw, 80px)',
             fontWeight: 900,
             color: 'white',
             lineHeight: 1.1,

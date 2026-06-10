@@ -130,25 +130,40 @@ export function TechnologiesTabs() {
               border-color: #1a5fa8 !important;
               color: #0a1628 !important;
             }
+            .rov-content-grid {
+              display: grid;
+              grid-template-columns: 1fr 1fr;
+              gap: 60px;
+              align-items: center;
+            }
+            .rov-panel {
+              background: #0d1b2e;
+              border-radius: 20px;
+              border: 1px solid rgba(255,255,255,0.08);
+              padding: 48px;
+            }
+            @media (max-width: 768px) {
+              .rov-content-grid {
+                grid-template-columns: 1fr !important;
+                gap: 32px !important;
+              }
+              .rov-panel {
+                padding: 28px 20px !important;
+              }
+              .rov-tab-trigger {
+                padding: 8px 14px !important;
+                font-size: 13px !important;
+              }
+            }
           `}</style>
 
           {/* Contenido */}
-          <div style={{
-            background: "#0d1b2e",
-            borderRadius: 20,
-            border: "1px solid rgba(255,255,255,0.08)",
-            padding: "48px",
-          }}>
+          <div className="rov-panel">
             {rovs.map((rov) => (
               <Tabs.Content key={rov.value} value={rov.value}>
-                <div style={{
-                  display: "grid",
-                  gridTemplateColumns: "1fr 1fr",
-                  gap: 60,
-                  alignItems: "center",
-                }}>
+                <div className="rov-content-grid">
                   {/* Texto */}
-                  <div style={{ display: "flex", flexDirection: "column", gap: 20 }}>
+                  <div style={{ display: "flex", flexDirection: "column", gap: 20, minWidth: 0 }}>
                     <h3 style={{
                       fontSize: "clamp(24px, 3vw, 40px)",
                       fontWeight: 900,
@@ -207,13 +222,6 @@ export function TechnologiesTabs() {
         </Tabs.Root>
       </div>
 
-      <style>{`
-        @media (max-width: 768px) {
-          .rov-content-grid {
-            grid-template-columns: 1fr !important;
-          }
-        }
-      `}</style>
     </section>
   );
 }
