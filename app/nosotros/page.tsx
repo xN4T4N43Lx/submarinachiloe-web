@@ -10,7 +10,7 @@ export default function NosotrosPage() {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 72, alignItems: 'center' }}>
             <div style={{ borderRadius: 20, overflow: 'hidden', aspectRatio: '4/3' }}>
               <img
-                src="https://images.unsplash.com/photo-1551244072-5d12893278bc?w=900&q=80"
+                src="/Fondo1.jpg"
                 alt="ROV Submarina Chiloé"
                 style={{ width: '100%', height: '100%', objectFit: 'cover' }}
               />
@@ -64,7 +64,7 @@ export default function NosotrosPage() {
             </div>
             <div style={{ borderRadius: 20, overflow: 'hidden', aspectRatio: '4/3' }}>
               <img
-                src="https://images.unsplash.com/photo-1518020382113-a7e8fc38eac9?w=900&q=80"
+                src="/Fondo2.JPG"
                 alt="ROV operación"
                 style={{ width: '100%', height: '100%', objectFit: 'cover' }}
               />

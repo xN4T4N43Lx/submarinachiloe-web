@@ -20,24 +20,28 @@ export const Contact2 = ({
 }: Contact2Props) => {
   const [submitted, setSubmitted] = useState(false)
 
+  const wpNumber = phone.replace(/[\s+]/g, "").replace(/^0/, "")
   const contactItems = [
     {
       icon: Phone,
-      label: "Llámanos",
+      label: "Escríbenos por WhatsApp",
       value: phone,
-      href: `tel:${phone.replace(/\s/g, "")}`,
+      href: `https://wa.me/${wpNumber}`,
+      target: "_blank",
     },
     {
       icon: MapPin,
       label: "Dirección",
       value: location,
       href: null,
+      target: undefined,
     },
     {
       icon: Mail,
       label: "E-mail",
       value: email,
-      href: `mailto:${email}`,
+      href: `https://mail.google.com/mail/?view=cm&to=${email}`,
+      target: "_blank",
     },
   ]
 
@@ -119,7 +123,7 @@ export const Contact2 = ({
 
           {/* Items de contacto */}
           <div style={{ display: "flex", flexDirection: "column", gap: 24, marginTop: 8 }}>
-            {contactItems.map(({ icon: Icon, label, value, href }) => (
+            {contactItems.map(({ icon: Icon, label, value, href, target }) => (
               <div key={label} style={{ display: "flex", alignItems: "flex-start", gap: 14 }}>
                 <Icon
                   style={{ width: 20, height: 20, color: "#1a5fa8", flexShrink: 0, marginTop: 2 }}
@@ -131,6 +135,8 @@ export const Contact2 = ({
                   {href ? (
                     <a
                       href={href}
+                      target={target}
+                      rel={target === "_blank" ? "noopener noreferrer" : undefined}
                       style={{
                         fontWeight: 700,
                         color: "#0d1b5e",
