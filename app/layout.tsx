@@ -9,11 +9,6 @@ const inter = Inter({ subsets: ['latin'] });
 export const metadata: Metadata = {
   title: 'Robótica Submarina Chiloé | ROV Services',
   description: 'Servicios de ROV para inspección, monitoreo y operaciones subacuáticas en la industria salmonera del sur de Chile.',
-  icons: {
-    icon: '/Logo1.png',
-    shortcut: '/Logo1.png',
-    apple: '/Logo1.png',
-  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

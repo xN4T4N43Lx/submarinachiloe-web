@@ -1,3 +1,5 @@
+import Image from 'next/image'
+
 const CYAN = '#0ea5e9';
 
 export default function NosotrosPage() {
@@ -8,11 +10,13 @@ export default function NosotrosPage() {
 
           {/* Fila 1: imagen + historia */}
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 72, alignItems: 'center' }}>
-            <div style={{ borderRadius: 20, overflow: 'hidden', aspectRatio: '4/3' }}>
-              <img
+            <div style={{ borderRadius: 20, overflow: 'hidden', aspectRatio: '4/3', position: 'relative' }}>
+              <Image
                 src="/Fondo1.jpg"
                 alt="ROV Submarina Chiloé"
-                style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                fill
+                style={{ objectFit: 'cover' }}
+                sizes="(max-width: 768px) 100vw, 50vw"
               />
             </div>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
@@ -62,11 +66,13 @@ export default function NosotrosPage() {
                 </p>
               </div>
             </div>
-            <div style={{ borderRadius: 20, overflow: 'hidden', aspectRatio: '4/3' }}>
-              <img
+            <div style={{ borderRadius: 20, overflow: 'hidden', aspectRatio: '4/3', position: 'relative' }}>
+              <Image
                 src="/Fondo2.JPG"
-                alt="ROV operación"
-                style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                alt="ROV operación Submarina Chiloé"
+                fill
+                style={{ objectFit: 'cover' }}
+                sizes="(max-width: 768px) 100vw, 50vw"
               />
             </div>
           </div>
