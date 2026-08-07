@@ -34,25 +34,25 @@ export const sendEmail = async (formData: FormData) => {
     const resend = new Resend(resendApiKey);
 
     const { data, error } = await resend.emails.send({
-      from: "Contacto Web <onboarding@resend.dev>",
+      from: "Contacto Web <web@submarinachiloe.com>", // Actualizado para usar el dominio verificado
       to: [toEmail],
-      reply_to: email,
+      replyTo: email,
       subject: `Nuevo mensaje de contacto: ${subject}`,
       html: `
-         <p>Has recibido un nuevo mensaje desde el formulario de contacto de submarinachiloe.com:</p>
-         <ul>
-           <li><strong>Nombre:</strong> ${name}</li>
-           <li><strong>Email:</strong> ${email}</li>
-           <li><strong>Teléfono:</strong> ${phone || "No proporcionado"}</li>
-         </ul>
-         <hr>
-         <p><strong>Mensaje:</strong></p>
-         <p>${message}</p>
-       `,
+        <p>Has recibido un nuevo mensaje desde el formulario de contacto de submarinachiloe.com:</p>
+        <ul>
+          <li><strong>Nombre:</strong> ${name}</li>
+          <li><strong>Email:</strong> ${email}</li>
+          <li><strong>Teléfono:</strong> ${phone || "No proporcionado"}</li>
+        </ul>
+        <hr>
+        <p><strong>Mensaje:</strong></p>
+        <p>${message}</p>
+      `,
     });
 
     if (error) {
-      console.error("Error al enviar email con Resend:", error);
+      console.error("Error detallado de Resend:", JSON.stringify(error, null, 2));
       return { error: "Hubo un problema al enviar el mensaje." };
     }
 
