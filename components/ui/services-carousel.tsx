@@ -35,7 +35,7 @@ const services: ServiceItem[] = [
     id: "item-3",
     title: "Alimentación",
     summary: "Monitoreo y apoyo en sistemas de alimentación subacuática, asegurando una distribución eficiente del alimento y reduciendo el desperdicio en las jaulas.",
-    image: "/FotosWeb/alimentacion.jpeg",
+    image: "/FotosWeb/Alimentacion.jpeg",
   },
   {
     id: "item-4",
@@ -47,19 +47,19 @@ const services: ServiceItem[] = [
     id: "item-5",
     title: "Inspección de Sustrato",
     summary: "Inspección detallada del fondo marino y lacustre mediante ROV para evaluar el estado del sustrato, acumulación de residuos y condición ambiental del sector.",
-    image: "/FotosWeb/sustrato.jpeg",
+    image: "/FotosWeb/inspeccion.jpeg",
   },
   {
     id: "item-6",
     title: "Inspección de Redes Peceras y Loberas",
     summary: "Inspección exhaustiva de redes con video HD en tiempo real, detectando roturas, desgaste y anomalías para prevenir fugas y garantizar la integridad estructural.",
-    image: "/FotosWeb/inspeccion-redes.jpeg",
+    image: "/FotosWeb/inspeccionR.jpeg",
   },
   {
     id: "item-7",
     title: "Retiro de Redes con Embarcación",
     summary: "Operaciones de retiro y traslado de redes mediante embarcación especializada, con apoyo ROV para garantizar una maniobra segura y eficiente en todo momento.",
-    image: "/FotosWeb/retiro-redes.jpeg",
+    image: "/FotosWeb/retiro.jpeg",
   },
 ];
 
