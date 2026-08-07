@@ -23,49 +23,43 @@ const services: ServiceItem[] = [
     title: "Muestreo de Peces",
     summary:
       "Realizamos muestreos subacuáticos con equipos ROV para monitorear el estado sanitario, crecimiento y condición de los peces en los centros de cultivo.",
-    image: "https://images.unsplash.com/photo-1559825481-12a05cc00344?w=600&q=80",
+    image: "/FotosWeb/muestreo.jpeg",
   },
   {
     id: "item-2",
     title: "Cosecha",
-    summary:
-      "Apoyo en operaciones de cosecha mediante equipos ROV especializados, facilitando el proceso y reduciendo tiempos operacionales en los centros salmoneros.",
-    image: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=600&q=80",
+    summary: "Apoyo en operaciones de cosecha mediante equipos ROV especializados, facilitando el proceso y reduciendo tiempos operacionales en los centros salmoneros.",
+    image: "/FotosWeb/cosecha.jpeg",
   },
   {
     id: "item-3",
     title: "Alimentación",
-    summary:
-      "Monitoreo y apoyo en sistemas de alimentación subacuática, asegurando una distribución eficiente del alimento y reduciendo el desperdicio en las jaulas.",
-    image: "https://images.unsplash.com/photo-1501854140801-50d01698950b?w=600&q=80",
+    summary: "Monitoreo y apoyo en sistemas de alimentación subacuática, asegurando una distribución eficiente del alimento y reduciendo el desperdicio en las jaulas.",
+    image: "/FotosWeb/alimentacion.jpeg",
   },
   {
     id: "item-4",
     title: "Apoyo a Centros de Cultivo",
-    summary:
-      "Servicio integral de operarios calificados para pre-armado, desarme y apoyo en diversas labores operacionales dentro de los centros de cultivo acuícola.",
-    image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&q=80",
+    summary: "Servicio integral de operarios calificados para pre-armado, desarme y apoyo en diversas labores operacionales dentro de los centros de cultivo acuícola.",
+    image: "/FotosWeb/apoyo.jpeg",
   },
   {
     id: "item-5",
     title: "Inspección de Sustrato",
-    summary:
-      "Inspección detallada del fondo marino y lacustre mediante ROV para evaluar el estado del sustrato, acumulación de residuos y condición ambiental del sector.",
-    image: "https://images.unsplash.com/photo-1518020382113-a7e8fc38eac9?w=600&q=80",
+    summary: "Inspección detallada del fondo marino y lacustre mediante ROV para evaluar el estado del sustrato, acumulación de residuos y condición ambiental del sector.",
+    image: "/FotosWeb/sustrato.jpeg",
   },
   {
     id: "item-6",
     title: "Inspección de Redes Peceras y Loberas",
-    summary:
-      "Inspección exhaustiva de redes con video HD en tiempo real, detectando roturas, desgaste y anomalías para prevenir fugas y garantizar la integridad estructural.",
-    image: "https://images.unsplash.com/photo-1583212292454-1fe6229603b7?w=600&q=80",
+    summary: "Inspección exhaustiva de redes con video HD en tiempo real, detectando roturas, desgaste y anomalías para prevenir fugas y garantizar la integridad estructural.",
+    image: "/FotosWeb/inspeccion-redes.jpeg",
   },
   {
     id: "item-7",
     title: "Retiro de Redes con Embarcación",
-    summary:
-      "Operaciones de retiro y traslado de redes mediante embarcación especializada, con apoyo ROV para garantizar una maniobra segura y eficiente en todo momento.",
-    image: "https://images.unsplash.com/photo-1471922694854-ff1b63b20054?w=600&q=80",
+    summary: "Operaciones de retiro y traslado de redes mediante embarcación especializada, con apoyo ROV para garantizar una maniobra segura y eficiente en todo momento.",
+    image: "/FotosWeb/retiro-redes.jpeg",
   },
 ];
 
