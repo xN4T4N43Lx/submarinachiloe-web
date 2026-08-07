@@ -1,7 +1,8 @@
 "use client"
 
-import React, { useState } from "react"
+import React, { useState, useRef } from "react"
 import { Phone, MapPin, Mail, ArrowRight } from "lucide-react"
+import { sendEmail } from "@/app/actions/sendEmail"
 
 interface Contact2Props {
   title?: string
@@ -18,7 +19,9 @@ export const Contact2 = ({
   email = "jose.baez@submarinachiloe.com",
   location = "Chiloé, Región de Los Lagos",
 }: Contact2Props) => {
-  const [submitted, setSubmitted] = useState(false)
+  const formRef = useRef<HTMLFormElement>(null)
+  const [status, setStatus] = useState<{ success?: string; error?: string } | null>(null)
+  const [isSubmitting, setIsSubmitting] = useState(false)
 
   const wpNumber = phone.replace(/[\s+]/g, "").replace(/^0/, "")
   const contactItems = [
@@ -44,12 +47,6 @@ export const Contact2 = ({
       target: "_blank",
     },
   ]
-
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
-    setSubmitted(true)
-    setTimeout(() => setSubmitted(false), 4000)
-  }
 
   return (
     <section
@@ -178,7 +175,7 @@ export const Contact2 = ({
             Envíanos un mensaje
           </h2>
 
-          {submitted && (
+          {status?.success && (
             <div style={{
               marginBottom: 24,
               borderRadius: 8,
@@ -189,15 +186,42 @@ export const Contact2 = ({
               color: "#1e40af",
               fontWeight: 500,
             }}>
-              ¡Mensaje enviado! Nos pondremos en contacto pronto.
+              {status.success}
+            </div>
+          )}
+          {status?.error && (
+            <div style={{
+              marginBottom: 24,
+              borderRadius: 8,
+              background: "#fff1f2",
+              border: "1px solid #ffdde0",
+              padding: "12px 16px",
+              fontSize: 14,
+              color: "#be123c",
+              fontWeight: 500,
+            }}>
+              {status.error}
             </div>
           )}
 
-          <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: 14 }}>
+          <form
+            ref={formRef}
+            action={async (formData) => {
+              setIsSubmitting(true)
+              const result = await sendEmail(formData)
+              setStatus(result)
+              setIsSubmitting(false)
+              if (result.success) {
+                formRef.current?.reset()
+              }
+            }}
+            style={{ display: "flex", flexDirection: "column", gap: 14 }}
+          >
             {/* Fila 1 */}
             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 14 }}>
               <input
                 type="text"
+                name="name"
                 placeholder="Nombre y Apellido"
                 required
                 style={inputStyle}
@@ -206,6 +230,7 @@ export const Contact2 = ({
               />
               <input
                 type="email"
+                name="email"
                 placeholder="E-mail"
                 required
                 style={inputStyle}
@@ -218,6 +243,7 @@ export const Contact2 = ({
             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 14 }}>
               <input
                 type="tel"
+                name="phone"
                 placeholder="Teléfono"
                 style={inputStyle}
                 onFocus={e => (e.currentTarget.style.outline = "2px solid #0d1b5e")}
@@ -225,6 +251,7 @@ export const Contact2 = ({
               />
               <input
                 type="text"
+                name="subject"
                 placeholder="Asunto"
                 required
                 style={inputStyle}
@@ -235,6 +262,7 @@ export const Contact2 = ({
 
             {/* Textarea */}
             <textarea
+              name="message"
               placeholder="Mensaje"
               required
               rows={9}
@@ -252,6 +280,7 @@ export const Contact2 = ({
             {/* Botón */}
             <button
               type="submit"
+              disabled={isSubmitting}
               style={{
                 display: "inline-flex",
                 alignItems: "center",
@@ -268,11 +297,12 @@ export const Contact2 = ({
                 cursor: "pointer",
                 transition: "background 0.2s",
                 alignSelf: "flex-start",
+                opacity: isSubmitting ? 0.7 : 1,
               }}
               onMouseEnter={e => (e.currentTarget.style.background = "#1a2e7a")}
               onMouseLeave={e => (e.currentTarget.style.background = "#0d1b5e")}
             >
-              Enviar
+              {isSubmitting ? "Enviando..." : "Enviar"}
               <span style={{
                 display: "flex",
                 alignItems: "center",
