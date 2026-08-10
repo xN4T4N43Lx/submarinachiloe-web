@@ -22,19 +22,19 @@ const services: ServiceItem[] = [
     id: "item-1",
     title: "Muestreo de Peces",
     summary:
-      "Realizamos muestreos subacuáticos con equipos ROV para monitorear el estado sanitario, crecimiento y condición de los peces en los centros de cultivo.",
+      "Realizamos muestreos subacuáticos con equipos ROV y operarios calificados  para monitorear el estado sanitario, crecimiento y condición de los peces en los centros de cultivo.",
     image: "/FotosWeb/muestreo.jpeg",
   },
   {
     id: "item-2",
     title: "Cosecha",
-    summary: "Apoyo en operaciones de cosecha mediante equipos ROV especializados, facilitando el proceso y reduciendo tiempos operacionales en los centros salmoneros.",
+    summary: "Apoyo en operaciones de cosecha mediante equipos ROV especializados, y operarios calificados facilitando el proceso y reduciendo tiempos operacionales en los centros salmoneros.",
     image: "/FotosWeb/cosecha.jpeg",
   },
   {
     id: "item-3",
     title: "Alimentación",
-    summary: "Monitoreo y apoyo en sistemas de alimentación subacuática, asegurando una distribución eficiente del alimento y reduciendo el desperdicio en las jaulas.",
+    summary: "Monitoreo y apoyo en sistemas de alimentación  subacuática con equipos rov y operarios calificados, asegurando una distribución eficiente del alimento y reduciendo el desperdicio en las jaulas.",
     image: "/FotosWeb/Alimentacion.jpeg",
   },
   {
@@ -58,7 +58,7 @@ const services: ServiceItem[] = [
   {
     id: "item-7",
     title: "Retiro de Redes con Embarcación",
-    summary: "Operaciones de retiro y traslado de redes mediante embarcación especializada, con apoyo ROV para garantizar una maniobra segura y eficiente en todo momento.",
+    summary: "Operaciones de retiro y traslado de redes mediante embarcación especializada, con apoyo rov  y operarios calificados  para garantizar una maniobra segura y eficiente en todo momento.",
     image: "/FotosWeb/retiro.jpeg",
   },
 ];

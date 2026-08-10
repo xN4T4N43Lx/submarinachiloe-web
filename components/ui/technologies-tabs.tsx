@@ -19,7 +19,7 @@ const rovs: ROVTab[] = [
     description:
       "ROV compacto y versátil diseñado para inspecciones subacuáticas en entornos de la industria acuícola. Su diseño robusto permite operar en corrientes moderadas con estabilidad y precisión, capturando video HD en tiempo real para inspección de redes, fondeos y estructuras.",
     specs: ["Video HD en tiempo real", "Profundidad hasta 200 m", "Propulsores omnidireccionales", "Fácil despliegue desde embarcación"],
-    imageSrc: "/DTG2PRO-ROV-980x654.webp",
+    imageSrc: "/dtg2.jpeg",
   },
   {
     value: "dtg3",
@@ -28,7 +28,7 @@ const rovs: ROVTab[] = [
     description:
       "Versión mejorada del DTG2 con mayor potencia de empuje y capacidad de carga útil para herramientas especializadas. Ideal para tareas de intervención ligera, recuperación de objetos y operaciones en condiciones de mayor exigencia dentro de centros de cultivo.",
     specs: ["Mayor potencia de empuje", "Puerto para herramientas adicionales", "Cámara 4K con zoom óptico", "Operación en corrientes fuertes"],
-    imageSrc: "/DTG3.jpg",
+    imageSrc: "/dtg3.jpeg",
   },
   {
     value: "m2",
@@ -37,7 +37,7 @@ const rovs: ROVTab[] = [
     description:
       "ROV profesional de alta maniobrabilidad con seis propulsores vectorizados que permiten movimiento en los seis grados de libertad. Su cámara 4K UHD y sus potentes luces LED lo hacen ideal para inspecciones detalladas en ambientes con baja visibilidad.",
     specs: ["6 propulsores vectorizados", "Cámara 4K UHD", "Luces LED de alta potencia", "Profundidad hasta 100 m"],
-    imageSrc: "/M2.png",
+    imageSrc: "/chasing m2s.jpeg",
   },
   {
     value: "m2promax",
@@ -46,7 +46,7 @@ const rovs: ROVTab[] = [
     description:
       "La versión más avanzada de la línea Chasing, con mayor autonomía, sensores adicionales y capacidad para operar en profundidades extendidas. Diseñado para misiones de larga duración que requieren máxima calidad de imagen y datos precisos del entorno subacuático.",
     specs: ["Mayor autonomía de batería", "Sensores de profundidad avanzados", "Grabación simultánea 4K + datos", "Profundidad hasta 200 m"],
-    imageSrc: "/M2s.webp",
+    imageSrc: "/chasing m2 pro max.jpeg",
   },
 ];
 

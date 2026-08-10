@@ -91,7 +91,7 @@ function QuienesSomos() {
 
 // ──────────────────────────────────────────────
 function Clientes() {
-  const nombres = ['Mowi', 'Cermaq', 'AquaChile', 'Multiexport', 'Camanchaca', 'Los Fiordos', 'Salmones Aysén', 'Marine Harvest'];
+  const nombres = ['Mowi', 'AquaChile', 'Camanchaca'];
 
   return (
     <section id="clientes" style={{ background: '#ffffff', padding: '80px 24px' }}>
